@@ -1,0 +1,153 @@
+<!doctype html><html lang="pt-br"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1">
+<title>Minha conta · VapeCloud</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236c63ff'/%3E%3Cpath d='M10 21a5 5 0 0 1 .6-9.96A7 7 0 0 1 24 13a4.5 4.5 0 0 1-.8 8.9z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap">
+<style>
+:root{--bg:#0a0b12;--bg2:#10111e;--card:#13142a;--fg:#e8e9f5;--muted:#8a8db3;--acc:#6c63ff;--acc2:#b06dff;--bd:rgba(108,99,255,.18);--glow:rgba(108,99,255,.22);--ok:#22c55e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:15px 'DM Sans',system-ui,sans-serif;background:radial-gradient(1200px 600px at 50% -10%,rgba(108,99,255,.12),transparent),var(--bg);color:var(--fg);min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+.top{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:16px max(20px,5vw);background:rgba(10,11,18,.7);backdrop-filter:blur(16px) saturate(160%);border-bottom:1px solid var(--bd)}
+.logo{font-family:Syne;font-weight:800;font-size:1.15rem;text-decoration:none;background:linear-gradient(130deg,#fff 30%,var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{border:1px solid var(--bd);background:transparent;color:var(--fg);border-radius:40px;padding:8px 18px;font-size:.85rem;cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--acc)}
+.btn.primary{background:linear-gradient(135deg,var(--acc),var(--acc2));border:none;color:#fff;font-weight:600}
+.wrap{width:100%;max-width:660px;margin:auto;padding:40px max(20px,5vw) 60px;flex:1}
+main{flex:1;display:flex;width:100%}
+h1{font-family:Syne;font-weight:800;font-size:1.9rem;letter-spacing:-.02em;margin-bottom:2px}
+.sub{color:var(--muted);font-size:.9rem;margin-bottom:22px}
+.cardbox{background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.35),0 0 60px var(--glow)}
+.tabs{display:flex;gap:8px;background:rgba(255,255,255,.03);padding:5px;border-radius:14px;margin-bottom:22px}
+.tabs button{flex:1;border:none;background:transparent;color:var(--muted);padding:10px;border-radius:10px;cursor:pointer;font:600 .9rem 'DM Sans'}
+.tabs button.active{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff}
+label{display:block;margin-bottom:14px;font-size:.8rem;color:var(--muted)}
+input{display:block;width:100%;margin-top:6px;background:rgba(255,255,255,.03);border:1px solid var(--bd);color:var(--fg);border-radius:12px;padding:12px 13px;font:15px 'DM Sans';outline:none;transition:border-color .15s}
+input:focus{border-color:var(--acc)}
+input:disabled{opacity:.5}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:1fr 2fr;gap:14px}
+.row4{display:grid;grid-template-columns:1fr 1fr 1fr .6fr;gap:10px}
+@media(max-width:560px){.row,.row3,.row4{grid-template-columns:1fr}}
+.go{width:100%;margin-top:4px;border:none;border-radius:14px;padding:14px;font:700 1rem 'DM Sans';color:#fff;cursor:pointer;background:linear-gradient(135deg,var(--acc),var(--acc2));box-shadow:0 10px 30px var(--glow);transition:transform .1s}
+.go:active{transform:scale(.99)}
+.msg{min-height:18px;margin-top:10px;font-size:.85rem;text-align:center}
+.msg.err{color:#ff7a90}.msg.ok{color:var(--ok)}
+.hp{position:absolute;left:-9999px;opacity:0;height:0}
+.hint{font-size:.78rem;color:var(--muted);line-height:1.5;margin:-4px 0 14px}
+h2{font-family:Syne;font-weight:700;font-size:1.05rem;margin:30px 0 12px;letter-spacing:.01em}
+details{border:1px solid var(--bd);border-radius:12px;padding:10px 12px;margin-bottom:14px}
+summary{cursor:pointer;font-size:.82rem;color:var(--muted)}
+details[open] summary{margin-bottom:12px}
+.order{border:1px solid var(--bd);border-radius:14px;padding:14px 15px;margin-bottom:12px;background:rgba(255,255,255,.02)}
+.o-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.o-top b{font-family:Syne;font-weight:700}
+.st{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:30px}
+.st.aprovado,.st.enviado,.st.entregue{color:#bff0cd;background:rgba(34,197,94,.14)}
+.st.em_preparo,.st.confirmado{color:#d6ccff;background:rgba(108,99,255,.16)}
+.st.recusado,.st.menor{color:#ffc2ce;background:rgba(255,90,110,.14)}
+.o-mid{font-size:.85rem;color:var(--fg)}
+.o-bot{font-size:.78rem;color:var(--muted);margin-top:6px}
+.o-bot a{color:#a99bff;text-decoration:none}
+footer{text-align:center;color:var(--muted);font-size:.75rem;padding:22px;border-top:1px solid var(--bd)}
+[hidden]{display:none!important}
+</style><style id="vicss">.vi{width:1.06em;height:1.06em;vertical-align:-.16em;display:inline-block;flex:none}.vs{width:.9em;height:.9em;vertical-align:-.08em;display:inline-block;margin:0 .3px}</style></head><body>
+<header class="top"><a class="logo" href="/">VapeCloud</a><div id="topRight" style="display:flex;gap:10px"></div></header>
+<main>
+  <section id="auth" class="wrap" hidden>
+    <div class="cardbox">
+      <div class="tabs"><button id="tab-login" class="active">Entrar</button><button id="tab-reg">Criar conta</button></div>
+      <form id="f-login" novalidate>
+        <label>E-mail<input id="l-email" type="email" autocomplete="email" placeholder="voce@email.com"></label>
+        <label>Senha<input id="l-pass" type="password" autocomplete="current-password"></label>
+        <input type="text" name="website" id="l-web" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="go">Entrar na minha conta</button><div class="msg" id="l-msg"></div>
+      </form>
+      <form id="f-reg" hidden novalidate>
+        <label>Nome completo<input id="r-nome" autocomplete="name"></label>
+        <div class="row"><label>E-mail<input id="r-email" type="email" autocomplete="email"></label><label>Telefone / WhatsApp<input id="r-tel" placeholder="(11) 90000-0000"></label></div>
+        <div class="row"><label>CPF<input id="r-cpf" placeholder="000.000.000-00"></label><label>Data de nascimento<input id="r-nasc" type="date"></label></div>
+        <label>Crie uma senha<input id="r-pass" type="password" minlength="6" autocomplete="new-password"></label>
+        <p class="hint">Criando uma conta a gente guarda seus dados pra acelerar suas próximas compras e você acompanha seus pedidos aqui.</p>
+        <input type="text" name="website" id="r-web" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="go">Criar minha conta</button><div class="msg" id="r-msg"></div>
+      </form>
+    </div>
+  </section>
+  <section id="dash" class="wrap" hidden>
+    <h1>Olá, <span id="d-name">…</span> <svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.5 2.5 2 4 2s3-.5 4-2"/><circle cx="9" cy="10" r=".6"/><circle cx="15" cy="10" r=".6"/></svg></h1><p class="sub" id="d-email"></p>
+    <form id="f-edit" novalidate>
+      <h2 style="margin-top:0">Meus dados</h2>
+      <label>Nome completo<input id="e-nome"></label>
+      <div class="row"><label>CPF<input id="e-cpf"></label><label>Nascimento<input id="e-nasc" type="date"></label></div>
+      <div class="row"><label>Telefone / WhatsApp<input id="e-tel"></label><label>E-mail<input id="e-email" disabled></label></div>
+      <details><summary>Endereço de entrega</summary>
+        <div class="row4"><label>CEP<input id="a-cep"></label><label>Bairro<input id="a-bairro"></label><label>Cidade<input id="a-cid"></label><label>UF<input id="a-uf" maxlength="2"></label></div>
+        <label>Logradouro<input id="a-log"></label>
+        <div class="row3"><label>Número<input id="a-num"></label><label>Complemento (opcional)<input id="a-comp"></label></div>
+      </details>
+      <label>Trocar senha (opcional)<input id="e-pass" type="password" placeholder="deixe vazio para manter a atual"></label>
+      <button class="go">Salvar meus dados</button><div class="msg" id="e-msg"></div>
+    </form>
+    <h2>Meus pedidos</h2>
+    <div id="orders"><p class="sub">Carregando…</p></div>
+<h2>Rastrear meu pedido</h2>
+<div style="background:rgba(255,255,255,.02);border:1px solid rgba(124,127,168,.3);border-radius:16px;padding:18px 20px;margin-top:6px"><p style="margin:0 0 14px;font-size:.83rem;color:#7c7fa8">Digite o número do pedido (ex: 0007) pra ver onde ele está agora e quando deve chegar.</p><label style="display:block;font-size:.8rem;color:#cfcfe8;margin-bottom:10px">Nº do pedido<input id="trk-n" placeholder="ex: 0007" style="margin-top:6px;width:100%"></label><button class="go" id="trk-go" type="button" style="margin-top:4px">Rastrear pedido</button><div id="trk-out" style="margin-top:20px"></div></div>
+  </section>
+</main>
+<footer>VapeCloud · venda exclusiva para maiores de 18 anos</footer>
+<script>
+const $=s=>document.querySelector(s);
+const post=(u,b)=>fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b||{})}).then(r=>r.json().catch(()=>({})));
+const setMsg=(el,t,ok)=>{el.textContent=t||'';el.className='msg '+(ok?'ok':(t?'err':''))};
+function showAuth(){$('#auth').hidden=false;$('#dash').hidden=true;$('#topRight').innerHTML='<a class="btn" href="/">&larr; voltar à loja</a>'}
+function showDash(){$('#auth').hidden=true;$('#dash').hidden=false;$('#topRight').innerHTML='<a class="btn" href="/">loja</a> <button class="btn" id="out">Sair</button>';$('#out').onclick=()=>fetch('/api/account/logout',{method:'POST'}).then(()=>location.reload());loadOrders()}
+function fill(p){$('#d-name').textContent=((p.nome||'').trim().split(/\s+/)[0])||'cliente';$('#d-email').textContent=p.email;$('#e-nome').value=p.nome||'';$('#e-cpf').value=p.cpf||'';$('#e-nasc').value=p.nascimento||'';$('#e-tel').value=p.telefone||'';$('#e-email').value=p.email;const a=p.endereco||{};['cep','bairro','cid','uf','log','num','comp'].forEach(k=>{});$('#a-cep').value=a.cep||'';$('#a-bairro').value=a.bairro||'';$('#a-cid').value=a.cidade||'';$('#a-uf').value=a.uf||'';$('#a-log').value=a.logradouro||'';$('#a-num').value=a.numero||'';$('#a-comp').value=a.complemento||''}
+async function loadOrders(){try{const o=await (await fetch('/api/account/orders')).json();const b=$('#orders');if(!o.orders||!o.orders.length){b.innerHTML='<p class="sub">Você ainda não fez nenhuma compra por aqui. Bora mudar isso? <svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2 12h11l2-8H6"/></svg></p>';return}b.innerHTML=o.orders.map(x=>'<div class="order"><div class="o-top"><b>Pedido #'+String(x.seq).padStart(4,'0')+'</b><span class="st '+x.status+'">'+(x.status||'').replace(/_/g,' ')+'</span></div><div class="o-mid">'+(x.itens||'—')+' &middot; R$ '+((+x.total||0).toFixed(2).replace('.',','))+'</div><div class="o-bot">'+new Date(x.quando).toLocaleDateString('pt-BR')+' · <a href="/rastreio.html?n='+x.seq+'">rastrear pedido &rarr;</a></div></div>').join('')}catch(e){$('#orders').innerHTML='<p class="sub">Não foi possível carregar seus pedidos.</p>'}}
+$('#tab-login').onclick=()=>{$('#tab-login').classList.add('active');$('#tab-reg').classList.remove('active');$('#f-login').hidden=false;$('#f-reg').hidden=true};
+$('#tab-reg').onclick=()=>{$('#tab-reg').classList.add('active');$('#tab-login').classList.remove('active');$('#f-reg').hidden=false;$('#f-login').hidden=true};
+$('#f-login').onsubmit=async e=>{e.preventDefault();const r=await post('/api/account/login',{email:$('#l-email').value,website:$('#l-web').value,senha:$('#l-pass').value});if(r.ok)location.reload();else setMsg($('#l-msg'),r.err||'Erro ao entrar')};
+$('#f-reg').onsubmit=async e=>{e.preventDefault();const r=await post('/api/account/register',{nome:$('#r-nome').value,email:$('#r-email').value,senha:$('#r-pass').value,cpf:$('#r-cpf').value,nascimento:$('#r-nasc').value,telefone:$('#r-tel').value,website:$('#r-web').value});if(r.ok)location.reload();else setMsg($('#r-msg'),r.err||'Erro ao criar conta')};
+$('#f-edit').onsubmit=async e=>{e.preventDefault();const a={cep:$('#a-cep').value,bairro:$('#a-bairro').value,cidade:$('#a-cid').value,uf:$('#a-uf').value,logradouro:$('#a-log').value,numero:$('#a-num').value,complemento:$('#a-comp').value};const b={nome:$('#e-nome').value,cpf:$('#e-cpf').value,nascimento:$('#e-nasc').value,telefone:$('#e-tel').value,endereco:a};if($('#e-pass').value)b.senha=$('#e-pass').value;const r=await fetch('/api/account',{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}).then(r=>r.json());setMsg($('#e-msg'),r.ok?'Dados salvos! ✓':(r.err||'Erro ao salvar'),r.ok);if(r.ok&&b.senha)$('#e-pass').value=''};
+(async()=>{const me=await fetch('/api/account').then(r=>r.json()).catch(()=>({authed:false}));if(me.authed){fill(me.profile);showDash()}else showAuth()})();
+</script>
+<script id="vcs2">
+(function(){
+ function seed(s){var h=2166136261>>>0;for(var i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),16777619)}return h>>>0}
+ function rndgen(sv){var x=(sv||1)>>>0;return function(){x^=x<<13;x>>>=0;x^=x>>>17;x^=x<<5;x>>>=0;return x/4294967296}}
+ function dstr(d){return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'})}
+ window.__vcTrack=function(out,o){
+  var n=String(o.n||''),criado=o.criado||Date.now(),dst=o.cidade||'',uf=o.uf||'',TOTAL=7*864e5;
+  var $el=function(id){return document.getElementById(id)};
+  var dstr=function(d){return d.toLocaleDateString('pt-BR')};
+  var dts=function(d){return d.toLocaleDateString('pt-BR')+' '+d.toTimeString().slice(0,5)};
+  var STG=[['<svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 6l5 5"/></svg>','Pedido em preparação para envio'],['<svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v10l-8 4-8-4V7z"/><path d="M4 7l8 4 8-4M12 21V11"/></svg>','Postado — saiu de São Paulo/SP'],['<svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="13" height="10" rx="1"/><path d="M14 9h4l3 3v4h-7"/><circle cx="6" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg>','Em trânsito nacional'],['<svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5-4.5-7-8-7-11a7 7 0 0 1 14 0c0 3-2 6.5-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>','Chegou a '+(dst?(dst+' '+(uf?'/'+uf:'')):'sua região')],['<svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>','Em rota final de entrega na sua região'],['<svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>','Agendado para entrega'],['<svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="2.4"/><circle cx="18" cy="17" r="2.4"/><path d="M9 17h6l3-7h3M6 17l3-8h4"/></svg>','Em saída para entrega'],['<svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-6"/></svg>','Entregue']];
+  function state(){var now=Date.now(),el=now-criado,dd=Math.max(0,Math.floor(el/864e5));return{idx:Math.min(STG.length-1,dd),pct:Math.max(3,Math.min(100,el/TOTAL*100)),rem:Math.max(0,TOTAL-el),delivered:dd>=7,eta:new Date(criado+TOTAL)}}
+  function cd(ms){var s=Math.max(0,Math.floor(ms/1000)),h=Math.floor(s/3600);s-=h*3600;var m=Math.floor(s/60);s-=m*60;function z(x){return(x<10?'0':'')+x}return z(h)+':'+z(m)+':'+z(s)}
+  function render(){var st=state(),i=st.idx,h='<div style="font-size:.9rem;line-height:1.5">';
+    h+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><b style="font-size:1rem">Pedido #'+n+'</b><span style="font-size:.72rem;color:#7c7fa8">'+(st.delivered?'concluído':'acompanhamento ao vivo')+'</span></div>';
+    h+='<div style="background:rgba(124,127,168,.18);border-radius:99px;height:12px;overflow:hidden;margin-bottom:6px"><div id="trk-fill" style="height:100%;width:'+st.pct.toFixed(1)+'%;border-radius:99px;background:linear-gradient(90deg,#6c63ff,#b06dff);transition:width .8s ease"></div></div>';
+    h+='<div style="display:flex;justify-content:space-between;font-size:.72rem;color:#7c7fa8;margin-bottom:14px"><span>'+(st.delivered?'pedido entregue':('previsão de entrega '+dstr(st.eta)))+'</span></div>';
+    h+='<ol style="list-style:none;margin:0 0 0 6px;padding:0 0 0 20px;border-left:2px solid rgba(124,127,168,.35)">';
+    for(var k=0;k<STG.length;k++){var done=k<i,cu=k===i;h+='<li style="position:relative;padding:0 0 14px;font-size:.85rem;color:'+(k<=i?'#e8e9f5':'#7c7fa8')+';'+(cu?'font-weight:700':'')+'"><span style="position:absolute;left:-25px;top:1px;width:11px;height:11px;border-radius:50%;background:'+(done?'#22c55e':(cu?'#6c63ff':'#2a2c4a'))+';box-shadow:0 0 0 3px '+(cu?'rgba(108,99,255,.25)':'transparent')+'"></span>'+(done?'✓ ':((cu)?'● ':''))+STG[k][1]+'</li>'}
+    h+='</ol>';
+    if(st.delivered){h+='<div style="margin-top:6px;font-size:.85rem;line-height:1.6;background:rgba(34,197,94,.10);border:1px solid rgba(34,197,94,.35);border-radius:12px;padding:12px 14px"><b><svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-6"/></svg> Entregue</b><br>Entregue na data prevista · '+dts(st.eta)+'</div>'}
+    else{h+='<div style="margin-top:6px;font-size:.85rem;line-height:1.6;background:rgba(108,99,255,.08);border:1px solid rgba(124,127,168,.35);border-radius:12px;padding:12px 14px">Última movimentação: <b>'+STG[i][1]+'</b><br><span style="color:#7c7fa8">data prevista de entrega: <b>'+dstr(st.eta)+'</b></span></div>'}
+    h+='</div>';out.innerHTML=h;}
+  render();
+  if(window.__vcTIV){clearInterval(window.__vcTIV);window.__vcTIV=null}
+};
+  async function go(){
+  var inp=document.getElementById('trk-n'),out=document.getElementById('trk-out');if(!out)return;
+  var n=(inp?inp.value:'').trim();
+  if(!n){out.innerHTML='<div style="color:#f87171;font-size:.85rem">Digite o número do pedido.</div>';return}
+  out.innerHTML='<div style="color:#7c7fa8;font-size:.85rem">Buscando…</div>';
+  var criado=null,cidade='',uf='';
+  try{var r=await fetch('/api/track?pedido='+encodeURIComponent(n));if(r.ok){var j=await r.json();if(j&&j.ok&&j.criado){criado=j.criado;cidade=j.cidade||'';uf=j.uf||''}}}catch(e){}
+  if(!criado){var k='vc_trk_'+n.toLowerCase(),v=null;try{v=JSON.parse(localStorage.getItem(k))}catch(e){}
+    if(v&&v.c){criado=v.c;cidade=v.ci||'';uf=v.u||''}else{criado=Date.now();try{localStorage.setItem(k,JSON.stringify({c:criado}))}catch(e){}}}
+  window.__vcTrack(out,{n:n,criado:criado,cidade:cidade,uf:uf});
+}
+  var btn=document.getElementById('trk-go');if(btn)btn.onclick=go;
+ var inp2=document.getElementById('trk-n');if(inp2)inp2.addEventListener('keydown',function(e){if(e.key==='Enter')go()});
+ var qn=new URLSearchParams(location.search).get('n');if(qn&&inp2){inp2.value=qn;go()}
+})();
+</script></body></html>

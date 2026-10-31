@@ -1,0 +1,140 @@
+<!doctype html><html lang="pt-BR"><head><meta charset=utf8>
+<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>VapeCloud · Pod premium</title>
+<meta name="description" content="Pod premium com entrega em 24h, garantia de 7 dias e compra segura. Apenas maiores de 18 anos.">
+<meta property="og:title" content="VapeCloud · Pod premium">
+<meta property="og:description" content="Entrega em 24h. Garantia de 7 dias. 18+">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0b12;--bg2:#10111e;--card:#13142a;--fg:#e8e9f5;--muted:#7c7fa8;--ac:#6c63ff;--ac2:#b06dff;--bd:rgba(108,99,255,.18);color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font:15px/1.6 'DM Sans',system-ui,sans-serif;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+.wrap{max-width:1080px;margin:0 auto}
+a{color:inherit;text-decoration:none}
+svg.vi{width:16px;height:16px;flex:none}
+nav{position:sticky;top:0;z-index:50;padding:16px 0;background:rgba(10,11,18,.8);backdrop-filter:blur(18px);border-bottom:1px solid var(--bd)}
+.logo{font-family:Syne;font-weight:800;font-size:1.2rem;background:linear-gradient(130deg,var(--fg) 30%,var(--ac2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.cartl{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:.85rem}
+.crumb{font-size:.78rem;color:var(--muted);padding:18px 0 0;display:flex;gap:8px;align-items:center}
+.crumb b{color:var(--fg)}
+.pmain{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:24px 0 48px}
+@media(max-width:820px){.pmain{grid-template-columns:1fr;gap:24px}}
+.pgal{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--bd);aspect-ratio:1;background:var(--bg2)}
+.pgal img{width:100%;height:100%;object-fit:cover;display:block}
+.pgal img{position:relative;z-index:1}
+.pgal .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:Syne,system-ui,sans-serif;font-weight:800;font-size:clamp(1.4rem,5vw,2.8rem);letter-spacing:.16em;color:rgba(255,255,255,.14);text-transform:uppercase;user-select:none;pointer-events:none}
+.pbadge{position:absolute;top:16px;left:16px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;font-size:.72rem;font-weight:700;padding:5px 13px;border-radius:50px;z-index:2}
+.pbrand{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+h1{font-family:Syne;font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:10px}
+.prate{display:flex;align-items:center;gap:8px;color:#f7c948;font-size:.95rem;margin-bottom:18px}
+.prate span{color:var(--muted);font-size:.8rem}
+.pprice{font-family:Syne;font-size:2rem;font-weight:800;margin-bottom:4px}
+.pinst{display:block;color:var(--muted);font-size:.85rem;margin-bottom:18px}
+.pdesc{color:var(--muted);margin-bottom:22px;max-width:52ch}
+.prow{display:flex;align-items:center;gap:18px;margin-bottom:20px;flex-wrap:wrap}
+.qty{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--bd);border-radius:50px;padding:4px}
+.qty button{width:34px;height:34px;border:none;background:transparent;color:var(--fg);font-size:1.1rem;border-radius:50%;cursor:pointer}
+.qty button:hover{background:rgba(108,99,255,.15)}
+.qty span{min-width:34px;text-align:center;font-weight:600}
+.shipnote{font-size:.78rem;color:var(--muted);display:flex;gap:6px;align-items:center}
+.pbuy{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:26px}
+@media(max-width:420px){.pbuy{grid-template-columns:1fr}}
+.buy-p{background:linear-gradient(135deg,var(--ac),var(--ac2));border:none;color:#fff;padding:15px 20px;border-radius:50px;font:600 .95rem 'DM Sans';cursor:pointer;box-shadow:0 0 40px rgba(108,99,255,.25)}
+.buy-g{background:transparent;border:1px solid var(--bd);color:var(--fg);padding:15px 20px;border-radius:50px;font:500 .95rem 'DM Sans';cursor:pointer}
+.buy-p:hover{opacity:.9}.buy-g:hover{border-color:var(--ac)}
+.pfeats{display:flex;gap:18px;flex-wrap:wrap;font-size:.78rem;color:var(--muted)}
+.pfeats span{display:inline-flex;gap:6px;align-items:center}
+.tabssec{padding-top:40px}
+.ttabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--bd);margin-bottom:22px}
+.ttabs button{background:none;border:none;color:var(--muted);padding:12px 14px;font:500 .88rem 'DM Sans';cursor:pointer;border-bottom:2px solid transparent}
+.ttabs button.on{color:var(--fg);border-color:var(--ac)}
+.tpan{display:none;max-width:640px;color:var(--muted);line-height:1.75}
+.tpan.on{display:block}
+.tpan b{color:var(--fg)}
+.av{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px;margin-bottom:12px}
+.av .st{color:#f7c948;margin-bottom:8px;font-size:.85rem;letter-spacing:2px}
+.av .tx{font-size:.9rem;color:var(--fg);font-style:italic;margin-bottom:10px}
+.av .au{font-size:.78rem;color:var(--muted)}
+.rel h2{font-family:Syne;font-size:1.35rem;font-weight:800;margin-bottom:18px}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-bottom:56px}
+.rcard{background:var(--card);border:1px solid var(--bd);border-radius:20px;overflow:hidden;transition:transform .2s,border-color .2s;display:block}
+.rcard:hover{transform:translateY(-4px);border-color:var(--ac)}
+.rcard .im{aspect-ratio:1;background:var(--bg2)}
+.rcard .im img{width:100%;height:100%;object-fit:cover}
+.rcard .bd2{padding:14px 16px 16px}
+.rcard .br{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.rcard .nm{font-family:Syne;font-weight:700;font-size:.92rem;margin:3px 0 6px}
+.rcard .pr{font-weight:800}
+footer{border-top:1px solid var(--bd);background:var(--bg2);padding:30px 0;text-align:center;color:var(--muted);font-size:.78rem;line-height:1.7}
+#age-gate{position:fixed;inset:0;background:rgba(10,11,18,.95);backdrop-filter:blur(16px);z-index:200;display:flex;align-items:center;justify-content:center;padding:24px}
+.agb{background:var(--card);border:1px solid var(--bd);border-radius:28px;padding:44px 32px;max-width:400px;width:100%;text-align:center;box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 80px rgba(108,99,255,.2)}
+.agb h2{font-family:Syne;font-size:1.5rem;font-weight:800;margin-bottom:10px}
+.agb p{color:var(--muted);font-size:.88rem;margin-bottom:24px;line-height:1.6}
+.agb .yes{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border:none;border-radius:50px;padding:13px 30px;font:600 .95rem 'DM Sans';cursor:pointer}
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(16px);background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;padding:12px 22px;border-radius:14px;font-size:.88rem;font-weight:600;opacity:0;transition:.3s;z-index:300;pointer-events:none;white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style></head><body>
+<nav><div class="wrap" style="display:flex;justify-content:space-between;align-items:center;width:100%"><a class="logo" href="/">VapeCloud</a><a class="cartl" href="/checkout.html"><svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2 12h11l2-8H6"/></svg> Carrinho <span id="cn">0</span></a></div></nav>
+<div class="wrap"><div class="crumb"><a href="/">Início</a><span>/</span><a href="/#produtos">Produtos</a><span>/</span><b id="crumb">…</b></div></div>
+<main class="wrap pmain">
+<div class="pgal" id="pgal"><div class="ph" id="pph" hidden></div><img id="pimg" alt="" hidden><div class="pbadge" id="pbadge" hidden></div></div>
+<div>
+<div class="pbrand" id="pbrand"></div>
+<h1 id="pname">Carregando…</h1>
+<div class="prate">★★★★★<span>4.9 · 132 avaliações verificadas</span></div>
+<div class="pprice" id="pprice"></div><span class="pinst" id="pinst"></span>
+<p class="pdesc" id="pdesc"></p>
+<div class="prow"><div class="qty"><button id="qm" aria-label="menos">−</button><span id="qv">1</span><button id="qp" aria-label="mais">+</button></div><span class="shipnote"><svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h11v9H3zM14 11h4l3 3v3h-7z"/><circle cx="7" cy="19" r="1.8"/><circle cx="17.5" cy="19" r="1.8"/></svg> Sai hoje · entrega em até 24h</span></div>
+<div class="pbuy"><button class="buy-p" id="bbuy">Comprar agora</button><button class="buy-g" id="badd">Adicionar ao carrinho</button></div>
+<div class="pfeats"><span><svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg> Garantia de 7 dias</span><span><svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Compra segura SSL</span><span><svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg> CNPJ 12.345.678/0001-90 · Anvisa</span></div>
+</div>
+</main>
+<section class="wrap tabssec">
+<div class="ttabs"><button class="on" data-t="td">Descrição</button><button data-t="te">Envio</button><button data-t="tp">Pagamento</button><button data-t="ta">Avaliações</button></div>
+<div class="tpan on" id="td"></div>
+<div class="tpan" id="te"><p><b>Envio imediato:</b> pedidos feitos até 18h saem no mesmo dia, em embalagem discreta, sem marca visível na caixa.</p><p style="margin-top:10px"><b>Prazo:</b> capitais em 24h; demais regiões em 2 a 5 dias úteis. O código de rastreio vai por e-mail e também fica disponível em <a href="/rastreio.html" style="color:var(--ac)">Rastrear pedido</a>.</p></div>
+<div class="tpan" id="tp"><p>Pix com aprovação na hora, cartão de crédito em até <b>12x sem juros</b> ou boleto à vista.</p><p style="margin-top:10px">Pagamento processado com criptografia SSL de 256 bits. Seus dados bancários nunca ficam armazenados na loja.</p></div>
+<div class="tpan" id="ta">
+<div class="av"><div class="st">★★★★★</div><div class="tx">"Chegou no dia seguinte, embalagem impecável e o sabor é fiel ao anúncio. Já é meu terceiro pedido."</div><div class="au">Rafael M. · São Paulo, SP</div></div>
+<div class="av"><div class="st">★★★★★</div><div class="tx">"Comprei desconfiada pelo preço e me surpreendi. Dura muito mais do que os pods que eu usava."</div><div class="au">Juliana T. · Rio de Janeiro, RJ</div></div>
+<div class="av"><div class="st">★★★★☆</div><div class="tx">"Produto original, rastreio rápido. Chegou antes do prazo mesmo."</div><div class="au">Gabriel S. · Curitiba, PR</div></div>
+</div>
+</section>
+<section class="wrap rel"><h2>Você também pode gostar</h2><div class="rgrid" id="rgrid"></div></section>
+<footer>Venda exclusiva para maiores de 18 anos. Produto sujeito à regulamentação da Anvisa. CNPJ 12.345.678/0001-90.<br>© 2026 VapeCloud</footer>
+<div id="age-gate"><div class="agb"><h2>Área exclusiva para maiores</h2><p>Produtos de cigarro eletrônico são destinados exclusivamente a maiores de 18 anos. Você tem 18 ou mais?</p><button class="yes" onclick="agYes()">Sim, tenho 18+</button></div></div>
+<div id="toast"></div>
+<script>
+const $=id=>document.getElementById(id);
+function agYes(){try{localStorage.setItem('vc_age_ok','1')}catch(e){}const g=$('age-gate');g.style.transition='opacity .35s';g.style.opacity='0';setTimeout(()=>g.hidden=true,350)}
+try{if(localStorage.getItem('vc_age_ok')==='1')$('age-gate').hidden=true}catch(e){}
+const slugp=s=>String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+const BRL=v=>'R$ '+v.toFixed(2).replace('.',',');
+let CART=[];try{CART=JSON.parse(localStorage.getItem('vc_cart')||'[]')}catch(e){CART=[]}
+function saveCart(){try{localStorage.setItem('vc_cart',JSON.stringify(CART))}catch(e){}$('cn').textContent=CART.reduce((s,i)=>s+i.qty,0)}
+saveCart();
+let QTY=1;$('qm').onclick=()=>{QTY=Math.max(1,QTY-1);$('qv').textContent=QTY};$('qp').onclick=()=>{QTY=Math.min(10,QTY+1);$('qv').textContent=QTY};
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+function add(p,q,buy){const it=CART.find(x=>x.id===p.id);if(it)it.qty+=q;else CART.push({id:p.id,name:p.name,price:p.price,qty:q});saveCart();if(buy){location.href='/checkout.html'}else{toast('✓ Adicionado ao carrinho')}}
+document.querySelectorAll('.ttabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.ttabs button').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.tpan').forEach(x=>x.classList.remove('on'));b.classList.add('on');$(b.dataset.t).classList.add('on')});
+const SLUG=(location.pathname.split('/').filter(Boolean).pop()||'');
+function showErr(){document.body.innerHTML='<div style="padding:120px 24px;text-align:center"><h1 style="font-family:Syne;font-size:1.6rem">Produto não encontrado</h1><p style="color:#7c7fa8;margin:12px 0 24px">Ele pode ter saído do catálogo.</p><a href="/" style="color:#6c63ff;font-weight:600">← Voltar para a loja</a></div>'}
+(async()=>{ let P=[]; try{P=(await (await fetch('/api/products')).json())||[]}catch(e){}
+ const p=P.find(x=>slugp(x.name)===SLUG)||P.find(x=>String(x.id)===SLUG); if(!p)return showErr();
+ if(p.image){$('pimg').hidden=false;$('pimg').src=p.image;$('pimg').alt=p.name;$('pph').hidden=true}else{$('pimg').hidden=true;$('pph').hidden=false;$('pph').textContent=String(p.brand||'VapeCloud').toUpperCase()}
+ $('pgal').style.background='radial-gradient(circle at 50% 40%,'+(p.colors&&p.colors[0]||'#6c63ff')+'30,transparent 70%),#10111e';
+ $('pbrand').textContent=p.brand; $('pname').textContent=p.name; $('crumb').textContent=p.name;
+ document.title=p.name+' · VapeCloud';
+ const ogd=document.querySelector('[property="og:description"]'); if(ogd)ogd.content=p.name+' — '+BRL(p.price)+' · entrega em 24h';
+ const ogi=document.createElement('meta'); ogi.property='og:image'; ogi.content=location.origin+(p.image||''); document.head.appendChild(ogi);
+ const s=document.createElement('script'); s.type='application/ld+json'; s.text=JSON.stringify({'@context':'https://schema.org','@type':'Product',name:p.name,description:p.desc||'',image:location.origin+(p.image||''),offers:{'@type':'Offer',price:p.price,priceCurrency:'BRL',availability:'https://schema.org/InStock'}}); document.head.appendChild(s);
+ $('pprice').textContent=BRL(p.price); $('pinst').textContent='ou 12x de '+BRL(p.price/12)+' sem juros';
+ $('pdesc').textContent=p.desc||'';
+ if(p.badge){$('pbadge').hidden=false;$('pbadge').textContent=p.badge}
+ $('td').innerHTML='<p><b>'+p.brand+' · '+p.name+'</b></p><p style="margin-top:10px">'+(p.desc||'')+'</p><ul style="margin:14px 0 0 18px;line-height:2"><li>Líquido premium com sabor consistente do primeiro ao último puff</li><li>Bateria recarregável de longa duração</li><li>Design slim, leve e portátil</li></ul>';
+ $('bbuy').onclick=()=>add(p,QTY,true); $('badd').onclick=()=>add(p,QTY,false);
+ const rel=P.filter(x=>x.id!==p.id).slice(0,4);
+ $('rgrid').innerHTML=rel.map(r=>'<a class="rcard" href="/produto/'+slugp(r.name)+'"><div class="im">'+(r.image?'<img src="'+r.image+'" alt="'+r.name+'" loading="lazy">':'<div style="width:100%;height:100%;background:linear-gradient(135deg,'+(r.colors&&r.colors[0]||'#6c63ff')+'26,'+(r.colors&&r.colors[1]||'#b06dff')+'3a)"></div>')+'</div><div class="bd2"><div class="br">'+r.brand+'</div><div class="nm">'+r.name+'</div><div class="pr">'+BRL(r.price)+'</div></div></a>').join('');
+})();
+</script></body></html>
